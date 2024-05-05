@@ -5,9 +5,10 @@ class CubbyHole {
     private boolean available = false;
 
     public synchronized int get() {
+        // El consumidor adquier el monitor
         while (available == false) {
             try {
-                wait();
+                wait(); // espera que el Productor invoque a notify ()
             } catch (InterruptedException e) {
             }
         }
@@ -15,9 +16,11 @@ class CubbyHole {
         available = false;
         notify();
         return contents;
+        // el Consumidor libera el monitor
     }
 
     public synchronized void put(int value) {
+        // El productor adquiere el monitor
         while (available == true) {
             try {
                 wait();
@@ -27,6 +30,7 @@ class CubbyHole {
 
         contents = value;
         available = true;
-        notify();
+        notify();// lo notifica al Productor
+        // El productor libera el monitor
     }
 }
