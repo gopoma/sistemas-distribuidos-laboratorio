@@ -1,6 +1,6 @@
 package Productor_Consumidor_Modificado;
 
-public class CubbyHole {
+class CubbyHole {
     private int contents;
     private boolean available = false;
 
@@ -13,7 +13,7 @@ public class CubbyHole {
         }
         
         available = false;
-        notifyAll();
+        notify();
         return contents;
     }
 
@@ -27,6 +27,6 @@ public class CubbyHole {
 
         contents = value;
         available = true;
-        notifyAll();
+        notify();
     }
 }
