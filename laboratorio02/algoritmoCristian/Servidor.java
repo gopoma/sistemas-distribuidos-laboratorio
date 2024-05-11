@@ -6,16 +6,18 @@ import java.net.Socket;
 
 public class Servidor {
     public static void main(String[] args) {
+        final int PORT = 5000;
+        final int ADELANTO_SIMULADO = 10000;
         System.out.println("Iniciando servidor...");
         System.out.println("Esperando cliente...\n");
 
-        final int PORT = 5000;
-        final int ADELANTO_SIMULADO = 8000;
         try (
             ServerSocket serverSocket = new ServerSocket(PORT);
-            //espera que un cliente se conecre y devuelve un obj socket que representa la conexion
+            //espera que un cliente se conecte y devuelve un obj socket que representa la conexion
             Socket clienteSocket = serverSocket.accept();
+            //obj para enviar mensajes al cliente
             PrintWriter out = new PrintWriter(clienteSocket.getOutputStream(), true);
+            //obj para recibir mensajes del cliente
             BufferedReader in = new BufferedReader(new InputStreamReader(clienteSocket.getInputStream()));
             ) {
             
