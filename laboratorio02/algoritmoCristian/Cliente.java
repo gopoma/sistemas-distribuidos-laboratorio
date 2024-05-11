@@ -13,17 +13,19 @@ public class Cliente {
         try (
             //se conecta al servidor localhost en el puerto 5000
             Socket socket = new Socket(SERVER, PORT);
+            //Via para comunicarse con el servdor
             PrintWriter out = new PrintWriter(socket.getOutputStream(), true);
+            //via para recibir mensajes del servidor
             BufferedReader in = new BufferedReader(new InputStreamReader(socket.getInputStream()));
         ) {
             Long T0, Ts, T1, TSinc;
             System.out.println("Iniciando Cliente...");
-            T0 = System.currentTimeMillis();
-            out.println(T0);
-            Ts = Long.parseLong(in.readLine());
+            T0 = System.currentTimeMillis(); //captura de T0
+            out.println(T0); //envio del tiempo actual al servidor
+            Ts = Long.parseLong(in.readLine()); //lectura del tiempo del servidor
 
-            T1 = System.currentTimeMillis();
-            TSinc = Ts + (T1 - T0)/2;
+            T1 = System.currentTimeMillis(); //captura del tiempo de recepcion T1
+            TSinc = Ts + (T1 - T0)/2; //calculo del nuevo tiempo 
             DateFormat horaformat = new SimpleDateFormat("HH:mm:ss:SSS");
 
             System.out.println("Tiempo del cliente: " + horaformat.format(new Date(T1)));
