@@ -30,7 +30,7 @@ public class SimulatorMonitor
             this.diffTimes[n] = (time-serverTime); // Setea el array de diferencias
             this.sumDiffs    += time;              // Sumar a la variable sumDiffs
             countClientsOpered--;                  // Se decrementa el contador de clientes que han operado 
-            //System.out.println("El cliente " + n + " setea diffTimes[n] con : " + time + "-" + serverTime + " = " + (this.diffTimes[n]));
+            //System.out.println("El cliente " + n + " setea diffTimes["+n+"] con : " + time + "-" + serverTime + " = " + (this.diffTimes[n]));
             if(countClientsOpered==0) notify();    // Si ya han operado todos los clientes, se despierta al servidor de la cola de espera
             wait();                                // Los clientes esperan hasta que el servidor setee los ajustes de tiempo en diffTime
         }catch(InterruptedException e){}
