@@ -3,8 +3,6 @@ package CasoEstudio03;
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 
-import CasoEstudio03.ServerResponse;
-
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 
@@ -16,9 +14,7 @@ public class Client {
         try {
             CreditCardService c = (CreditCardService) Naming.lookup("rmi://localhost:4000/CreditCardService");
             
-            ServerResponse R = c.sum(num1, num2);
-            System.out.println(R.success);
-            System.out.println( "The addition of " + num1 + " and " + num2 + " is: " + R.result);
+            System.out.println( "The addition of " + num1 + " and " + num2 + " is: " + c.sum(num1, num2));
         } catch (MalformedURLException murle) {
             System.out.println();
             System.out.println("MalformedURLException");
