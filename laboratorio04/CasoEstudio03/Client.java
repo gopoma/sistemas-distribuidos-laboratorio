@@ -4,6 +4,9 @@ import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.util.ArrayList;
 import java.util.Scanner;
+
+import CasoEstudio03.CreditCard;
+
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 
@@ -115,6 +118,45 @@ public class Client {
                     }
                 } else if(option == 4) {
                     //? Actualizar Registro
+
+                    System.out.print("Id de la Tarjeta de Crédito a Actualizar: ");
+                    int id = sc.nextInt();
+
+                    CreditCard item = (CreditCard) c.get(id);
+
+                    if(item == null) {
+                        System.out.println("¡Registro no Encontrado!");
+                    } else {
+                        System.out.println("Tarjeta de Crédito con Id " + item.id + ":");
+                        System.out.println(item);
+
+                        System.out.println();
+                        System.out.println();
+
+                        sc.nextLine();
+
+                        System.out.print("Número de la tarjeta: ");
+                        String number = sc.nextLine();
+
+                        System.out.print("DNI del titular de la tarjeta: ");
+                        String holderDNI = sc.nextLine();
+
+                        System.out.print("Nombre del titular de la tarjeta: ");
+                        String holderName = sc.nextLine();
+
+                        System.out.print("Saldo actual: ");
+                        double balance = sc.nextDouble();
+
+                        c.update(
+                            item.id,
+                            number,
+                            holderDNI,
+                            holderName,
+                            balance
+                        );
+
+                        System.out.println("Tarjeta de Crédito Actualizada Satisfactoriamente");
+                    }
                 } else if(option == 5) {
                     //? Eliminar Registro
 

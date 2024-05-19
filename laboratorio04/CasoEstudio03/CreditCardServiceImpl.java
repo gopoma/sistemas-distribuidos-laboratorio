@@ -72,10 +72,36 @@ public class CreditCardServiceImpl extends java.rmi.server.UnicastRemoteObject i
         String holderName,
         double balance
     ) throws java.rmi.RemoteException {
-        return new CreditCard();
+        CreditCard c = new CreditCard(
+            id,
+            number,
+            holderDNI,
+            holderName,
+            balance
+        );
+
+        for(int i = 0; i < items.size(); i++) {
+            if(items.get(i).id == id) {
+                items.set(i, c);
+            }
+        }
+
+        mappings.put(c.id, c);
+
+        return c;
     }
 
     public boolean delete(int id) throws java.rmi.RemoteException {
+        int tar_idx = -1;
+        for(int i = 0; i < items.size(); i++) {
+            if(items.get(i).id == id) {
+                tar_idx = i;
+            }    
+        }
+
+        items.remove(tar_idx);
+        mappings.remove(items.get(tar_idx).id);
+
         return true;
     }
 }
