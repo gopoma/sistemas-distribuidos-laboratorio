@@ -27,15 +27,21 @@ public class Client {
                 System.out.println(" \\____|\\___||___/\\__|_|\\___/|_| |_|  \\__,_|\\___|   |_|\\__,_|_| _/ |\\___|\\__\\__,_|___/  \\__,_|\\___|  \\____|_|  \\___|\\__,_|_|\\__\\___/ ");
                 System.out.println("                                                              |__/                                                                  ");
 
-                System.out.println("1. Leer Registros");
+                System.out.println("1. Leer todos los Registros");
                 System.out.println("2. Crear Registro");
-                System.out.println("3. Actualizar Registro");
-                System.out.println("4. Eliminar Registro");
+                System.out.println("3. Leer Registro");
+                System.out.println("4. Actualizar Registro");
+                System.out.println("5. Eliminar Registro");
+                System.out.println("6. Salir");
 
                 System.out.print("Introduzca una opción: ");
                 int option = sc.nextInt();
+                
+                System.out.println();
+                System.out.println();
 
                 if(option == 1) {
+                    //? Leer todos los Registros
                     ArrayList<CreditCard> items = (ArrayList<CreditCard>) c.getAll();
                     
                     System.out.println("Cantidad de Registros: " + items.size());
@@ -52,20 +58,68 @@ public class Client {
                         for(int i = 0; i < items.size(); i++) {
                             CreditCard item = items.get(i);
     
-                            System.out.println("Registro #" + i + ":");
-                            System.out.println("id: " + item.id);
-                            System.out.println("Número de la tarjeta: " + item.number);
-                            System.out.println("DNI del titular de la tarjeta: " + item.holderDNI);
-                            System.out.println("Nombre del titular de la tarjeta: " + item.holderName);
-                            System.out.println("Saldo actual: " + item.balance);
+                            System.out.println("Registro #" + (i + 1) + ":");
+                            System.out.println(item);
+
+                            System.out.println();
+                            System.out.println();
                         }
                     }
                 } else if(option == 2) {
+                    //? Crear Registro
 
+                    //? String number;     //? Número de la tarjeta
+                    //? String holderDNI;  //? DNI del titular de la tarjeta
+                    //? String holderName; //? Nombre del titular de la tarjeta
+                    //? double balance;    //? Saldo actual
+
+                    sc.nextLine();
+
+                    System.out.print("Número de la tarjeta: ");
+                    String number = sc.nextLine();
+
+                    System.out.print("DNI del titular de la tarjeta: ");
+                    String holderDNI = sc.nextLine();
+
+                    System.out.print("Nombre del titular de la tarjeta: ");
+                    String holderName = sc.nextLine();
+
+                    System.out.print("Saldo actual: ");
+                    double balance = sc.nextDouble();
+
+                    CreditCard item = (CreditCard) c.create(
+                        number,
+                        holderDNI,
+                        holderName,
+                        balance
+                    );
+
+                    System.out.println();
+                    System.out.println();
+
+                    System.out.println("Tarjeta de Crédito creada:");
+                    System.out.println(item);
                 } else if(option == 3) {
+                    //? Leer Registro
 
+                    System.out.print("Id de la Tarjeta de Crédito: ");
+                    int id = sc.nextInt();
+
+                    CreditCard item = (CreditCard) c.get(id);
+
+                    if(item == null) {
+                        System.out.println("¡Registro no Encontrado!");
+                    } else {
+                        System.out.println("Tarjeta de Crédito con Id " + item.id + ":");
+                        System.out.println(item);
+                    }
                 } else if(option == 4) {
-
+                    //? Actualizar Registro
+                } else if(option == 5) {
+                    //? Eliminar Registro
+                } else if(option == 6) {
+                    System.out.println("¡Hasta la próxima!");
+                    break;
                 } else {
                     System.out.println("¡Opción Inválida!");
                 }

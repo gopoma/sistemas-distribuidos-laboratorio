@@ -23,4 +23,13 @@ public class CreditCard implements Serializable {
         this.holderName = hName;
         this.balance    = b;
     }
+
+    @Override
+    public String toString() {
+        return "id: " + this.id + "\n" +
+        "Número de la tarjeta: " + this.number + "\n" +
+        "DNI del titular de la tarjeta: " + this.holderDNI + "\n" +
+        "Nombre del titular de la tarjeta: " + this.holderName + "\n" +
+        "Saldo actual: " + this.balance; 
+    }
 }
