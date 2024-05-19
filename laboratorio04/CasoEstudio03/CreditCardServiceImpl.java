@@ -99,8 +99,8 @@ public class CreditCardServiceImpl extends java.rmi.server.UnicastRemoteObject i
             }    
         }
 
-        items.remove(tar_idx);
         mappings.remove(items.get(tar_idx).id);
+        items.remove(tar_idx);
 
         return true;
     }
