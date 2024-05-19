@@ -1,4 +1,4 @@
-package CasoEstudio03;
+package creditcards;
 
 import java.io.Serializable;
 

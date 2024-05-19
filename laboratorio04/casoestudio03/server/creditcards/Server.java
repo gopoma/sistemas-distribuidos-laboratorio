@@ -1,4 +1,4 @@
-package CasoEstudio03;
+package creditcards;
 
 import java.rmi.Naming;
 import java.rmi.registry.LocateRegistry;

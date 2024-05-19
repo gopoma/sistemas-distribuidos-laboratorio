@@ -1,11 +1,11 @@
-package CasoEstudio03;
+package creditcards;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
+import java.rmi.registry.LocateRegistry;
+import java.rmi.registry.Registry;
 import java.util.ArrayList;
 import java.util.Scanner;
-
-import CasoEstudio03.CreditCard;
 
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
@@ -13,7 +13,12 @@ import java.rmi.NotBoundException;
 public class Client {
     public static void main(String[] args) {
         try {
-            CreditCardService c = (CreditCardService) Naming.lookup("rmi://localhost:4000/CreditCardService");
+            System.setProperty("java.rmi.server.codebase", "file:///./CasoEstudio03/");
+            System.setProperty("java.rmi.server.useCodebaseOnly", "true");
+
+            Registry registry = LocateRegistry.getRegistry("localhost", 4000);
+            CreditCardService c = (CreditCardService) registry.lookup("CreditCardService");
+            //? CreditCardService c = (CreditCardService) Naming.lookup("rmi://localhost:4000/CreditCardService");
 
             //? Error Handling
             //? int num1 = 20;
@@ -198,10 +203,12 @@ public class Client {
                 System.out.println();
                 System.out.println();
             }
-        } catch (MalformedURLException murle) {
-            System.out.println();
-            System.out.println("MalformedURLException");
-            System.out.println(murle);
+
+            sc.close();
+        //? } catch (MalformedURLException murle) {
+        //?     System.out.println();
+        //?     System.out.println("MalformedURLException");
+        //?     System.out.println(murle);
         } catch (RemoteException re) {
             System.out.println();
             System.out.println("RemoteException");
