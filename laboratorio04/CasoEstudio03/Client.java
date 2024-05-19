@@ -102,7 +102,7 @@ public class Client {
                 } else if(option == 3) {
                     //? Leer Registro
 
-                    System.out.print("Id de la Tarjeta de Crédito: ");
+                    System.out.print("Id de la Tarjeta de Crédito a Buscar: ");
                     int id = sc.nextInt();
 
                     CreditCard item = (CreditCard) c.get(id);
@@ -117,6 +117,33 @@ public class Client {
                     //? Actualizar Registro
                 } else if(option == 5) {
                     //? Eliminar Registro
+
+                    System.out.print("Id de la Tarjeta de Crédito a Eliminar: ");
+                    int id = sc.nextInt();
+
+                    CreditCard item = (CreditCard) c.get(id);
+
+                    if(item == null) {
+                        System.out.println("¡Registro no Encontrado!");
+                    } else {
+                        System.out.println("Registro a Eliminar:");
+                        System.out.println(item);
+
+                        System.out.print("Confirmar Eliminación (Y/n): ");
+                        String confirmation = sc.next();
+
+                        System.out.println("confirmation: "+confirmation);
+
+                        if(confirmation.toLowerCase().equals("y")) {
+                            c.delete(item.id);
+
+                            System.out.println("Tarjeta de Crédito Eliminada Satisfactoriamente");
+                        } else if(confirmation.toLowerCase().equals("n")) {
+                            System.out.println("Operación [Eliminar] Cancelada");
+                        } else {
+                            System.out.println("¡Opción Inválida!");
+                        }
+                    }
                 } else if(option == 6) {
                     System.out.println("¡Hasta la próxima!");
                     break;

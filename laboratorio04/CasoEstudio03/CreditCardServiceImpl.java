@@ -10,6 +10,20 @@ public class CreditCardServiceImpl extends java.rmi.server.UnicastRemoteObject i
 
     public CreditCardServiceImpl() throws java.rmi.RemoteException {
         super();
+
+        this.create(
+            "12345678910111213",
+            "71136033",
+            "Gustavo Eduardo Ordoño Poma",
+            25.50
+        );
+
+        this.create(
+            "13121110987654321",
+            "79797979",
+            "Diego Alonso Huamani Luque",
+            80.50
+        );
     }
 
     public int sum(int a, int b) throws java.rmi.RemoteException {
