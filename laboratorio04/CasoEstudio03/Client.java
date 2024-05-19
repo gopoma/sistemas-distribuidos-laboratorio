@@ -2,19 +2,22 @@ package CasoEstudio03;
 
 import java.rmi.Naming;
 import java.rmi.RemoteException;
-
+import java.util.ArrayList;
 import java.net.MalformedURLException;
 import java.rmi.NotBoundException;
 
 public class Client {
     public static void main(String[] args) {
-        int num1 = Integer.parseInt(args[0]);
-        int num2 = Integer.parseInt(args[1]);
-
         try {
             CreditCardService c = (CreditCardService) Naming.lookup("rmi://localhost:4000/CreditCardService");
-            
-            System.out.println( "The addition of " + num1 + " and " + num2 + " is: " + c.sum(num1, num2));
+
+            //? int num1 = 20;
+            //? int num2 = 5;
+            //? System.out.println( "The addition of " + num1 + " and " + num2 + " is: " + c.sum(num1, num2));
+
+            ArrayList<CreditCard> items = (ArrayList<CreditCard>) c.getAll();
+
+            System.out.println(items.size());
         } catch (MalformedURLException murle) {
             System.out.println();
             System.out.println("MalformedURLException");

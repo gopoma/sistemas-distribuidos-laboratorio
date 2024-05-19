@@ -5,7 +5,7 @@ import java.util.HashMap;
 
 public class CreditCardServiceImpl extends java.rmi.server.UnicastRemoteObject implements CreditCardService {
     private static int currentAssignableId  = 1;
-    private static ArrayList<CreditCard> items;
+    private static ArrayList<CreditCard> items = new ArrayList<CreditCard>();
     private static HashMap<Integer, CreditCard> mappings;
 
     public CreditCardServiceImpl() throws java.rmi.RemoteException {
