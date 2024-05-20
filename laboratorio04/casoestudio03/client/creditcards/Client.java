@@ -16,7 +16,7 @@ public class Client {
 
             //? Registry registry = LocateRegistry.getRegistry("192.168.1.13", 4000);
             //? CreditCardService c = (CreditCardService) registry.lookup("CreditCardService");
-            CreditCardService c = (CreditCardService) Naming.lookup("rmi://192.168.1.13:1099/CreditCardService");
+            CreditCardService c = (CreditCardService) Naming.lookup("rmi://localhost/CreditCardService");
 
             //? Error Handling
             //? int num1 = 20;

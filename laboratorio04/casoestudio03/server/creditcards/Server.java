@@ -13,8 +13,8 @@ public class Server {
             System.setProperty("java.rmi.server.useCodebaseOnly", "true");
             
             //? LocateRegistry.createRegistry(PORT);
-            System.setProperty("java.rmi.server.hostname", "192.168.1.13");
-            Naming.rebind("rmi://192.168.1.13:" + PORT + "/CreditCardService", c);
+            System.setProperty("java.rmi.server.hostname", "localhost");
+            Naming.rebind("rmi://localhost:" + PORT + "/CreditCardService", c);
         } catch(Exception e) {
             System.out.println("Trouble: ");
             e.printStackTrace();
