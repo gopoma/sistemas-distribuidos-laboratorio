@@ -1,5 +1,3 @@
-package creditcards;
-
 import java.rmi.Naming;
 import java.rmi.RemoteException;
 import java.rmi.registry.LocateRegistry;
@@ -13,12 +11,12 @@ import java.rmi.NotBoundException;
 public class Client {
     public static void main(String[] args) {
         try {
-            System.setProperty("java.rmi.server.codebase", "file:///./CasoEstudio03/");
+            System.setProperty("java.rmi.server.codebase", "file:///.");
             System.setProperty("java.rmi.server.useCodebaseOnly", "true");
 
-            Registry registry = LocateRegistry.getRegistry("localhost", 4000);
-            CreditCardService c = (CreditCardService) registry.lookup("CreditCardService");
-            //? CreditCardService c = (CreditCardService) Naming.lookup("rmi://localhost:4000/CreditCardService");
+            //? Registry registry = LocateRegistry.getRegistry("192.168.1.13", 4000);
+            //? CreditCardService c = (CreditCardService) registry.lookup("CreditCardService");
+            CreditCardService c = (CreditCardService) Naming.lookup("rmi://192.168.1.13:1099/CreditCardService");
 
             //? Error Handling
             //? int num1 = 20;

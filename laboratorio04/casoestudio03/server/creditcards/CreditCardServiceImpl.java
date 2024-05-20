@@ -1,5 +1,3 @@
-package creditcards;
-
 import java.util.ArrayList;
 import java.util.HashMap;
 

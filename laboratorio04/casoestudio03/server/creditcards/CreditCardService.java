@@ -1,5 +1,3 @@
-package creditcards;
-
 import java.util.ArrayList;
 
 public interface CreditCardService extends java.rmi.Remote {

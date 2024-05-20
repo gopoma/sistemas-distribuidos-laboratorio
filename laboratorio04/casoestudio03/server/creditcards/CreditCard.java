@@ -1,5 +1,3 @@
-package creditcards;
-
 import java.io.Serializable;
 
 public class CreditCard implements Serializable {
