@@ -1,0 +1,97 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<!DOCTYPE boe [
+<!ELEMENT boe (titulo, fecha, sumario)>
+<!ELEMENT titulo (#PCDATA)>
+<!ELEMENT fecha (aaaa, mm, dd)>
+<!ELEMENT aaaa (#PCDATA)>
+<!ELEMENT mm (#PCDATA)>
+<!ELEMENT dd (#PCDATA)>
+<!ELEMENT sumario (seccion+)>
+<!ELEMENT seccion (tit-seccion, apartado+)>
+<!ELEMENT tit-seccion (#PCDATA)>
+<!ELEMENT apartado (organismo, parrafo+)>
+<!ELEMENT organismo (#PCDATA)>
+<!ELEMENT parrafo (texto, pagina+)>
+<!ELEMENT texto (#PCDATA | ley | rd | orden | res)*>
+<!ELEMENT ley (#PCDATA)>
+<!ELEMENT rd (#PCDATA)>
+<!ELEMENT orden (#PCDATA)>
+<!ELEMENT res (#PCDATA)>
+<!ELEMENT pagina (#PCDATA)>
+]>
+<boe>
+    <titulo>BOLETIN OFICIAL DEL ESTADO</titulo>
+    <fecha><aaaa>2001</aaaa><mm>03</mm><dd>27</dd></fecha>
+    <sumario>
+        <seccion>
+            <tit-seccion>I. Disposiciones Generales</tit-seccion>
+            <apartado>
+                <organismo>MINISTERIO DE ASUNTOS EXTERIORES</organismo>
+                <parrafo>
+                    <texto>
+                        <ley>Ley 1/2001 de 5 de marzo</ley>, de la cesión gratuita
+                        a las Comunidades Autónomas el Impuesto sobre Animales y
+                        Cosas establecido por el <rd>REAL DECRETO 13/1991</rd>.
+                    </texto>
+                    <pagina>11290</pagina>
+                </parrafo>
+                <parrafo>
+                    <texto>
+                        <orden>ORDEN de 28 de febrero de 2001</orden> por la ...
+                    </texto>
+                    <pagina>11290</pagina>
+                    <pagina>11291</pagina>
+                </parrafo>
+            </apartado>
+            <apartado>
+                <organismo>MINISTERIO DE HACIENDA</organismo>
+                <parrafo>
+                    <texto>
+                        <rd>REAL DECRETO 285/2001</rd>, de 19 de marzo, sobre ...
+                    </texto>
+                    <pagina>11291</pagina>
+                    <pagina>11292</pagina>
+                    <pagina>11293</pagina>
+                    <pagina>11294</pagina>
+                </parrafo>
+            </apartado>
+            <apartado>
+                <organismo>MINISTERIO DE FOMENTO</organismo>
+                <parrafo>
+                    <texto>
+                        CORRECCIÓN de erratas de la Orden ...
+                    </texto>
+                    <pagina>11291</pagina>
+                    <pagina>11292</pagina>
+                    <pagina>11293</pagina>
+                    <pagina>11294</pagina>
+                </parrafo>
+            </apartado>
+        </seccion>
+        <seccion>
+            <tit-seccion>II. Autoridades y Personal</tit-seccion>
+            <apartado>
+                <organismo>CORTES GENERALES</organismo>
+                <parrafo>
+                    <texto>
+                        <res>RESOLUCIÓN de 19 de marzo de 2001</res>, de la ...
+                    </texto>
+                    <pagina>11294</pagina>
+                    <pagina>11295</pagina>
+                </parrafo>
+            </apartado>
+            <apartado>
+                <organismo>MINISTERIO DE ASUNTOS EXTERIORES</organismo>
+                <parrafo>
+                    <texto>
+                        <rd>REAL DECRETO 314/2001</rd>, de 24 de marzo, por el ...
+                    </texto>
+                    <pagina>11291</pagina>
+                    <pagina>11292</pagina>
+                    <pagina>11293</pagina>
+                    <pagina>11294</pagina>
+                </parrafo>
+            </apartado>
+        </seccion>
+    </sumario>
+</boe>
