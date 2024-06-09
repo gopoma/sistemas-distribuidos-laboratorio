@@ -1,7 +1,7 @@
 const soap = require('soap');
 
 //? const backendURL = 'http://localhost:8000/wsdl?wsdl';
-const backendURL = 'https://sistemas-distribuidos-laboratorio.onrender.com:8000/wsdl?wsdl';
+const backendURL = 'https://sistemas-distribuidos-laboratorio.onrender.com/wsdl?wsdl';
 
 async function main() {
     try {
