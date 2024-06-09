@@ -6,7 +6,7 @@ https://sistemas-distribuidos-laboratorio.onrender.com/
 
 **Endpoint:** https://sistemas-distribuidos-laboratorio.onrender.com/wsdl?wsdl
 
-**Documentación:** https://sistemas-distribuidos-laboratorio.onrender.com/docs
+**Documentación:** https://sistemas-distribuidos-laboratorio.onrender.com/wsdl?wsdl
 
 ### FrontEnd
 
