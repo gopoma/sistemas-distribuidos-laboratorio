@@ -1,28 +1,41 @@
+const products = [
+    {
+        id: 1,
+        name: "Lapiceros",
+        price: 0.80,
+        stock: 100,
+        description: "Lapiceros de alta calidad disponibles en varios colores, perfectos para tareas de escritura diaria.",
+        image: "https://minisope.vtexassets.com/arquivos/ids/185695-800-800?v=637819474442270000&width=800&height=800&aspect=true",
+        stars: 3,
+    },
+    {
+        id: 2,
+        name: "Cuadernos",
+        price: 3.40,
+        stock: 40,
+        description: "Cuadernos duraderos con 100 páginas rayadas, ideales para la escuela, la oficina y el uso personal.",
+        image: "https://lh6.googleusercontent.com/proxy/lWAMNYhg0i6tOLoDWcm6BSlQCe5kQMzSg2egqk00a_3wY4gLUafp1osIzMTeBq9nskylHAKOYBK2tKjQV5XgAm2bJ6hjahrnR0p0wAPzISNc8XY3CSOr2Bklk4yVko-shK-0C8I",
+        stars: 5,
+    },
+    {
+        id: 3,
+        name: "Hojas Bond",
+        price: 10.50,
+        stock: 75,
+        description: "Una resma de 500 hojas de papel bond premium, adecuada para impresión y fotocopiado.",
+        image: "https://offi.pe/image/catalog/PRODUCTOS/PAPELERIA/PAPEL%20IMPRESORA%20FOTOCOPIA/Papel%20impresora/papel-bond-a4-80gramos-report.png",
+        stars: 4,
+    },
+];
+
+
+
 const myService = {
     MyService: {
         MyPort: {
-            MyFunction: function (args) {
-                return new Promise((resolve, reject) => {
-                    setTimeout(() => {
-                        const result = {
-                            name: args.name,
-                            user: {
-                                email: 'gordono@unsa.edu.pe',
-                                role: 'admin'
-                            }
-                        };
-
-                        return resolve(result);
-                    }, 1000);
-                });
+            GetProducts: async function(args) {
+                return products;
             },
-
-            Sum: function(args) {
-                console.log({args});
-                const {a, b} = args;
-
-                return { result: Number.parseInt(a) + Number.parseInt(b) };
-            }
         }
     }
 };
@@ -33,6 +46,7 @@ const path = require('path');
 const express = require('express');
 const bodyParser = require('body-parser');
 const soap = require('soap');
+const cors = require('cors');
 
 console.log('env', process.env.NODE_ENV);
 
@@ -40,6 +54,7 @@ console.log('env', process.env.NODE_ENV);
 
 const app = express();
 
+app.use(cors());
 app.use(bodyParser.raw({type: function(){return true;}, limit: '5mb'}));
 
 app.get("/", (request, response) => {
