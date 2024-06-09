@@ -53,7 +53,7 @@
       <documentation>WSDL File for MyService</documentation>
       <port binding = "tns:MyFunction_Binding" name = "MyPort">
          <soap:address
-            location = "https://sistemas-distribuidos-laboratorio.onrender.com:8000/wsdl/" />
+            location = "https://sistemas-distribuidos-laboratorio.onrender.com/wsdl/" />
       </port>
    </service>
 
