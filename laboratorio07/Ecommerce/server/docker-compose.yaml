@@ -1,0 +1,7 @@
+version: "3.9"
+services:
+    server-service:
+        container_name: server-service
+        build: .
+        ports:
+            - "8000:8000"
