@@ -31,13 +31,22 @@ const express = require('express');
 const bodyParser = require('body-parser');
 const soap = require('soap');
 
-const xml = require('fs').readFileSync('myservice.wsdl', 'utf8');
+const path = require('path');
+const xml = require('fs').readFileSync(path.join(__dirname, '/myservice.wsdl'), 'utf8');
 
 //express server example
 const app = express();
 
 //body parser middleware are supported (optional)
 app.use(bodyParser.raw({type: function(){return true;}, limit: '5mb'}));
+
+app.get("/", (request, response) => {
+    return response.json({
+        name: "Ecommerce",
+        version: "1.0.0"
+    });
+});
+
 
 app.listen(8000, function(){
     //Note: /wsdl route will be handled by soap module
