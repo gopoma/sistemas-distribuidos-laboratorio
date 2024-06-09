@@ -32,7 +32,13 @@ const bodyParser = require('body-parser');
 const soap = require('soap');
 
 const path = require('path');
-const xml = require('fs').readFileSync(path.join(__dirname, '/myservice.wsdl'), 'utf8');
+let xml = null;
+console.log('env', process.env.NODE_ENV);
+if(process.env.NODE_ENV === 'production') {
+    xml = require('fs').readFileSync(path.join(__dirname, '/myservice-prod.wsdl'), 'utf8');
+} else {
+    xml = require('fs').readFileSync(path.join(__dirname, '/myservice-dev.wsdl'), 'utf8');
+}
 
 //express server example
 const app = express();

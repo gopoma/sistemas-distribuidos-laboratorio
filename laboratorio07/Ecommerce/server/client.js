@@ -1,17 +1,12 @@
 const soap = require('soap');
 
-const url = 'http://localhost:8000/wsdl?wsdl';
+//? const backendURL = 'http://localhost:8000/wsdl?wsdl';
+const backendURL = 'https://sistemas-distribuidos-laboratorio.onrender.com/wsdl?wsdl';
 
 async function main() {
     try {
-        const client = await soap.createClientAsync(url);
-//?        client.MyFunction({name:'value', val:'xd'}, function(error, result) {
-//?            if(error) {
-//?                console.log('Error', error);
-//?            } else {
-//?                console.log('Result', result);
-//?            }
-//?        });
+        const client = await soap.createClientAsync(backendURL);
+
         const [result] = await client.MyFunctionAsync({name:'value'});
         console.log({result});
 
