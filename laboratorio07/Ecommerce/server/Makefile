@@ -1,4 +1,6 @@
-dev-build:
+prod-build:
 	docker compose -f docker-compose.yaml build
-dev:
-	make dev-build && docker compose -f docker-compose.yaml up
+prod:
+	make prod-build && docker compose -f docker-compose.yaml up
+down:
+	docker compose down
