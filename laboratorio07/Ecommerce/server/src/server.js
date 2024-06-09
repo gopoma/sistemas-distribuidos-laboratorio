@@ -48,7 +48,7 @@ app.use(bodyParser.raw({type: function(){return true;}, limit: '5mb'}));
 
 app.get("/", (request, response) => {
     return response.json({
-        name: "Ecommerce",
+        name: "Ecommerce xd",
         version: "1.0.0"
     });
 });
