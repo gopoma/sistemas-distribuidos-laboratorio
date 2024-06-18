@@ -1,4 +1,9 @@
 package server.Proyecto.Model.dto;
 
-public record UpdateProject() {
+import java.time.LocalDate;
+public record UpdateProject(Integer idProyecto,
+                            String Nombre,
+                            LocalDate Fec_Inicio,
+                            LocalDate Fec_Final,
+                            Integer idDepartamentos) {
 }

@@ -1,6 +1,9 @@
 package server.Proyecto.Model.dto;
 
-import java.time.LocalDateTime;
+import java.time.LocalDate;;
 
-public record CreateProyect(String Nombre, LocalDateTime Fec_Inicio, LocalDateTime Fec_Final, Integer idDepartamentos) {
+public record CreateProject(String Nombre,
+                            LocalDate Fec_Inicio,
+                            LocalDate Fec_Final,
+                            Integer idDepartamentos) {
 }
