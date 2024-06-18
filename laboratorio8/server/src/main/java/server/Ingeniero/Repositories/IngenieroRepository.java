@@ -1,11 +1,12 @@
 package server.Ingeniero.Repositories;
 
 import org.springframework.data.repository.ListCrudRepository;
+import org.springframework.stereotype.Repository;
 import server.Ingeniero.Model.Ingeniero;
-import server.Proyecto.Model.Proyecto;
 
 import java.util.List;
 
-public interface DepartamentoRepository extends ListCrudRepository<Proyecto, Integer> {
-    List<Ingeniero> findAllByProject(Integer id);
+@Repository
+public interface IngenieroRepository extends ListCrudRepository<Ingeniero, Integer> {
+    List<Ingeniero> findAllByidProyecto(Integer id);
 }
