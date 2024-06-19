@@ -1,2 +1,7 @@
-package server.Departamento.Repositories;public interface DepartamentoRepositoryCustom {
+package server.Departamento.Repositories;
+
+import server.Departamento.Model.Departamento;
+
+public interface DepartamentoRepositoryCustom {
+    Departamento insertarDepartamento(Departamento dep);
 }
