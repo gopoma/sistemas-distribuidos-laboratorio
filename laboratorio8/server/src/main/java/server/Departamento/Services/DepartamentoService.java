@@ -21,7 +21,8 @@ public class DepartamentoService {
     }
 
     public Departamento createDepartamento(Departamento dep) {
-        return departamentoRepository.save(dep);
+        return departamentoRepository.insertarDepartamento(dep);
+        //return departamentoRepository.save(dep);
     }
 
     public Departamento updateDepartamento(Departamento dep) {
