@@ -5,5 +5,5 @@ import org.springframework.stereotype.Repository;
 import server.Departamento.Model.Departamento;
 
 @Repository
-public interface DepartamentoRepository extends ListCrudRepository<Departamento, Integer>{
+public interface DepartamentoRepository extends ListCrudRepository<Departamento, Integer>, DepartamentoRepositoryCustom{
 }
