@@ -27,17 +27,17 @@ public class IngenieroController {
     }
 
     @GetMapping("/{id}/proyecto")
-    public  List<IngProj> getProjectByDep(@PathVariable("id") Integer id) {
+    public  List<IngProj> getIngByProject(@PathVariable("id") Integer id) {
         return ingenieroServices.getIngenieroProject(id);
     }
 
     @PostMapping
-    public Ingeniero createProyecto(@RequestBody CreateIngeniero ing) {
+    public Ingeniero createIngeniero(@RequestBody CreateIngeniero ing) {
         return ingenieroServices.createIngeniero(ing);
     }
 
     @PutMapping
-    public Ingeniero updateProyecto(@RequestBody UpdateIngeniero ing) {
+    public Ingeniero updateIngeniero(@RequestBody UpdateIngeniero ing) {
         return ingenieroServices.updateIngeniero(ing);
     }
 
