@@ -1,0 +1,41 @@
+<section id="all-projects">
+    <button onclick="loadProyectos()">Cargar Proyectos</button>
+    <div id="projects-list"></div>
+</section>
+<section id="projects-by-department">
+    <h2>Proyectos por Departamento</h2>
+    <label for="department-id">ID Departamento:</label>
+    <input type="number" id="department-id" name="department-id" required><br>
+    <button onclick="loadProyectosByDepartamento()">Buscar</button>
+    <div id="department-projects-list"></div>
+</section>
+<section id="project-by-id">
+    <h2>Buscar Proyecto por ID</h2>
+    <label for="project-id">ID Proyecto:</label>
+    <input type="number" id="project-id" name="project-id" required><br>
+    <button onclick="loadProyectoById()">Buscar</button>
+    <div id="project-details"></div>
+</section>
+<section id="add-project">
+    <h2>Registrar Nuevo Proyecto</h2>
+    <form id="project-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="fecInicio">Fecha de Inicio:</label>
+        <input type="date" id="fecInicio" name="fecInicio" required><br>
+        <label for="fecFinal">Fecha Final:</label>
+        <input type="date" id="fecFinal" name="fecFinal" required><br>
+        <label for="idDepartamentos">ID Departamento:</label>
+        <input type="number" id="idDepartamentos" name="idDepartamentos" required><br>
+        <button type="button" onclick="createProyecto()">Registrar</button>
+        <button type="button" onclick="updateProyecto()">Actualizar</button>
+    </form>
+</section>
+<section id="delete-project">
+    <h2>Eliminar Proyecto</h2>
+    <label for="delete-id">ID Proyecto:</label>
+    <input type="number" id="delete-id" name="delete-id" required><br>
+    <button type="button" onclick="deleteProyecto()">Eliminar</button>
+</section>
+
+
