@@ -38,10 +38,12 @@ DELIMITER //
 CREATE PROCEDURE InsertarDepartamento(
     IN p_Nombre CHAR(200),
     IN p_Telefono VARCHAR(20),
-    IN p_Fax VARCHAR(20)
+    IN p_Fax VARCHAR(20),
+    OUT p_idDepartamentos INT
 )
 BEGIN
     INSERT INTO Departamento (Nombre, Telefono, Fax) VALUES (p_Nombre, p_Telefono, p_Fax);
+    SET p_idDepartamentos = LAST_INSERT_ID();
 END //
 DELIMITER ;
 
