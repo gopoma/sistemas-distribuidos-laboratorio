@@ -1,8 +1,8 @@
 import { useEffect, useState } from 'react';
 import { xml2js } from 'xml-js';
 
-//? const backendURL = 'http://localhost:8000/wsdl?wsdl';
-const backendURL = 'https://sistemas-distribuidos-laboratorio.onrender.com/wsdl?wsdl';
+const backendURL = 'http://localhost:8000/wsdl?wsdl';
+//? const backendURL = 'https://sistemas-distribuidos-laboratorio.onrender.com/wsdl?wsdl';
 
 function App() {
   const [products, setProducts] = useState([]);
