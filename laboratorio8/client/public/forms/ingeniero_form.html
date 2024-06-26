@@ -1,0 +1,37 @@
+<section id="all-engineers">
+    <button onclick="loadIngenieros()">Cargar Ingenieros</button>
+    <div id="engineers-list"></div>
+</section>
+<section id="engineer-by-id">
+    <h2>Buscar Ingeniero por ID</h2>
+    <label for="engineer-id-search">ID Ingeniero:</label>
+    <input type="number" id="engineer-id-search" name="engineer-id-search" required><br>
+    <button onclick="loadIngenieroById()">Buscar</button>
+    <div id="engineer-details"></div>
+</section>
+<section id="engineers-by-project">
+    <h2>Ingenieros por Proyecto</h2>
+    <label for="project-id-search">ID Proyecto:</label>
+    <input type="number" id="project-id-search" name="project-id-search" required><br>
+    <button onclick="loadIngenierosByProyecto()">Buscar</button>
+    <div id="project-engineers-list"></div>
+</section>
+<section id="add-engineer">
+    <h2>Registrar Nuevo Ingeniero</h2>
+    <form id="engineer-form">
+        <label for="especialidad">Especialidad:</label>
+        <input type="text" id="especialidad" name="especialidad" required><br>
+        <label for="cargo">Cargo:</label>
+        <input type="text" id="cargo" name="cargo" required><br>
+        <label for="idProyecto">ID Proyecto:</label>
+        <input type="number" id="idProyecto" name="idProyecto" required><br>
+        <button type="button" onclick="createIngeniero()">Registrar</button>
+        <button type="button" onclick="updateIngeniero()">Actualizar</button>
+    </form>
+</section>
+<section id="delete-engineer">
+    <h2>Eliminar Ingeniero</h2>
+    <label for="delete-engineer-id">ID Ingeniero:</label>
+    <input type="number" id="delete-engineer-id" name="delete-engineer-id" required><br>
+    <button type="button" onclick="deleteIngeniero()">Eliminar</button>
+</section>

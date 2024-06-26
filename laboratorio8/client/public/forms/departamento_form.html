@@ -1,0 +1,30 @@
+<section id="all-departments">
+    <button onclick="loadDepartamentos()">Cargar Departamentos</button>
+    <div id="departments-list"></div>
+</section>
+<section id="department-by-id">
+    <h2>Buscar Departamento por ID</h2>
+    <label for="department-id-search">ID Departamento:</label>
+    <input type="number" id="department-id-search" name="department-id-search" required><br>
+    <button onclick="loadDepartamentoById()">Buscar</button>
+    <div id="department-details"></div>
+</section>
+<section id="add-department">
+    <h2>Registrar Nuevo Departamento</h2>
+    <form id="department-form">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+        <label for="telefono">Teléfono:</label>
+        <input type="text" id="telefono" name="telefono" required><br>
+        <label for="fax">Fax:</label>
+        <input type="text" id="fax" name="fax" required><br>
+        <button type="button" onclick="createDepartamento()">Registrar</button>
+        <button type="button" onclick="updateDepartamento()">Actualizar</button>
+    </form>
+</section>
+<section id="delete-department">
+    <h2>Eliminar Departamento</h2>
+    <label for="delete-id">ID:</label>
+    <input type="number" id="delete-id" name="delete-id" required><br>
+    <button type="button" onclick="deleteDepartamento()">Eliminar</button>
+</section>
